@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
 
-import "./lib/PbMytest.sol";
-import "./lib/PbA.sol";
-import "./lib/PbB.sol";
+import "lib/PbMytest.sol";
+import "lib/PbA.sol";
+import "lib/PbB.sol";
 
 contract TestMain {
     event Msg1Part1(
