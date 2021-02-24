@@ -1,0 +1,25 @@
+name: go
+
+on: ['pull_request']
+
+jobs:
+  goreleaser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-          
+      - name: Set up Go
+        uses: actions/setup-go@v2.1.3
+        with:
+           go-version: 1.14
+           run: go mod tidy && go build -o protoc-gen-sol
+      - name: Go report card
+        uses: creekorful/goreportcard-action@v1.0
