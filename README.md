@@ -8,8 +8,22 @@ Both the message and generated code are more efficient than other
 solutions. It also includes a library to decode protobuf wireformat.
 Currently it generates decoders, with encoder support planned.
 
+## Install 
+
+Install Prereqs. 
+```bash
+./scripts/setup.sh
+```
+Build 
+```bash
+./scripts/install.sh
+```
+
+
 ## Usage
+
 ### .proto files
+
 Example:
 ```protobuf
 syntax = "proto3";
@@ -33,8 +47,8 @@ soltype option
 Check .proto files under test folder for more examples.
 
 ### Generate solidity library
-Run
 
+Run
 ```bash
 $ go build -o protoc-gen-sol
 $ export PATH=$PWD:$PATH
