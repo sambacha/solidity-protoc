@@ -23,3 +23,16 @@ jobs:
            run: go mod tidy && go build -o protoc-gen-sol
       - name: Go report card
         uses: creekorful/goreportcard-action@v1.0
+    
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v2
+        with:
+          version: latest
+          args: release --rm-dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload assets
+        uses: actions/upload-artifact@v2
+        with:
+          name: protoc-gen-sol
+          path: dist/*          
