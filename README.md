@@ -1,5 +1,6 @@
 # pb3-gen-sol 
 
+[![go](https://github.com/sambacha/solidity-protoc/actions/workflows/go.yml/badge.svg)](https://github.com/sambacha/solidity-protoc/actions/workflows/go.yml)
 
 pb3-gen-sol is a proto3 to solidity library generator that supports
 proto3 native types and uses field option for solidity native types.
